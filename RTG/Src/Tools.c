@@ -1,9 +1,6 @@
 #include "RTG.h"
 #include <stdbool.h>
-//#include "udp.h"
-
-
-/// LASTV
+#include <udp.h>
 
 #define BUFFER_LEN   5
 #define INIT_ZERO    0
@@ -12,18 +9,18 @@
 #define UART         2
 #define SPI          4
 #define I2C          8
-#define ADC          16
+#define ADC_          16
 
-// A structure for unpacking
+// structure for unpacking
 typedef struct packet{
-	uint32_t id;
-	uint8_t per;
-	uint8_t iter;
-	uint8_t size;
-	char* msg;
+	uint32_t  id;
+	uint8_t   per;
+	uint8_t   iter;
+	uint8_t   size;
+	char*     msg;
 }Packet_t;
 
-// helper variable
+// global helper variable
 uint8_t result;
 Packet_t pack;
 uint8_t msg_buffer[MSG_SIZE] = {INIT_ZERO};
@@ -33,7 +30,7 @@ uint8_t msg_buffer[MSG_SIZE] = {INIT_ZERO};
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port)
 {
 	// Get the IP of the Client
-	const char* remoteIP = ipaddr_ntoa(addr);
+	//const char* remoteIP = ipaddr_ntoa(addr);
 	char buf[BUFFER_LEN] = {'\0'};
 
 	// allocate pbuf from RAM
@@ -68,7 +65,7 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 			result = CheckI2C(pack.size, pack.msg, pack.iter);
 			break;
 
-		case ADC:
+		case ADC_:
 			result = CheckADC(pack.iter);
 			break;
 	}
@@ -134,7 +131,7 @@ int __io_getchar(void) {
 int _read(int file, char *ptr, int len) {
 	int DataIdx = 0;
 	char ch;
-	int counter = 0;
+	//int counter = 0;
 	for (; DataIdx < len; DataIdx++) {
 		ch = __io_getchar();
 		*ptr = ch;

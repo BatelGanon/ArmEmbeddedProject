@@ -29,7 +29,7 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
    iterations, each iteration checks if the sent data value equal to the master buffer
    after sending back to the master */
 
-uint8_t CheckSPI(uint8_t data_length, uint8_t *data, uint8_t iteration_len)
+uint8_t CheckSPI(uint8_t data_length, char *data, uint8_t iteration_len)
 {
 
 	// holding the data received back in master at the end of each iteration
@@ -49,7 +49,7 @@ uint8_t CheckSPI(uint8_t data_length, uint8_t *data, uint8_t iteration_len)
 			return TEST_FAILED;
 		}
 
-		status = HAL_SPI_TransmitReceive_DMA(SPI_1, data, buffer_SPI1, data_length);
+		status = HAL_SPI_TransmitReceive_DMA(SPI_1, (uint8_t*)data, buffer_SPI1, data_length);
 		if(status != HAL_OK)
 		{
 			return TEST_FAILED;

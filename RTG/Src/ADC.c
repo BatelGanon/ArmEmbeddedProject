@@ -5,7 +5,7 @@
 #include "ADC.h"
 #include <stdbool.h>
 
-/* the adc under unit tests function, the funtion checks if the adc value got is the expected value.
+/* the adc under unit tests function, the function checks if the adc value got is the expected value.
    the expected value is according to which the ADC peripheral connected to */
 uint8_t CheckADC(uint8_t iterations_len)
 {

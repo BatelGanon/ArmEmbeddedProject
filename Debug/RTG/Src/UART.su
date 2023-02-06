@@ -1,0 +1,2 @@
+../RTG/Src/UART.c:15:6:HAL_UART_RxCpltCallback	16	static
+../RTG/Src/UART.c:28:9:CHECK_UART_PROTOCOL	544	static

@@ -25,7 +25,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 
 
-uint8_t CHECK_UART_PROTOCOL(uint8_t data_length, uint8_t *data, uint8_t iteration_len)
+uint8_t CHECK_UART_PROTOCOL(uint8_t data_length, char *data, uint8_t iteration_len)
 {
 
 	// buffer for uart device 4 for receiving data
@@ -45,7 +45,7 @@ uint8_t CHECK_UART_PROTOCOL(uint8_t data_length, uint8_t *data, uint8_t iteratio
 			return TEST_FAILED;
 		}
 
-		status  = HAL_UART_Transmit_DMA(UART_6, data, data_length);
+		status  = HAL_UART_Transmit_DMA(UART_6,(uint8_t*)data, data_length);
 		if(status != HAL_OK)
 		{
 			return TEST_FAILED;
@@ -66,7 +66,7 @@ uint8_t CHECK_UART_PROTOCOL(uint8_t data_length, uint8_t *data, uint8_t iteratio
 			return TEST_FAILED;
 		}
 
-		status  = HAL_UART_Transmit_DMA(UART_4, data, data_length);
+		status  = HAL_UART_Transmit_DMA(UART_4, (uint8_t*)data, data_length);
 		if(status != HAL_OK)
 		{
 			return TEST_FAILED;

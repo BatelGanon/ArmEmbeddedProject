@@ -1,0 +1,6 @@
+../RTG/Src/Tools.c:30:6:udp_receive_callback	40	static
+../RTG/Src/Tools.c:97:6:udpServer_init	16	static
+../RTG/Src/Tools.c:113:5:__io_putchar	16	static
+../RTG/Src/Tools.c:118:5:_write	24	static
+../RTG/Src/Tools.c:124:5:__io_getchar	16	static
+../RTG/Src/Tools.c:131:5:_read	32	static

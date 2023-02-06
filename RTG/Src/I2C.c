@@ -34,7 +34,7 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c)
 
 /*the I2C under unit test, tests if bit pattern equals to the same data received after
   completing a communication cycle (data sent as follows: Master -> Slave -> Master)*/
-uint8_t CheckI2C(uint8_t data_length, uint8_t *data, uint8_t iteration_len)
+uint8_t CheckI2C(uint8_t data_length, char *data, uint8_t iteration_len)
 {
 
 	// buffer for master device for receiving data
@@ -57,7 +57,7 @@ uint8_t CheckI2C(uint8_t data_length, uint8_t *data, uint8_t iteration_len)
 		}
 
 		//Master transmit the data we got in the function to slave by DMA
-		status = HAL_I2C_Master_Transmit_DMA(I2C_1, hi2c1.Init.OwnAddress1, data, data_length);
+		status = HAL_I2C_Master_Transmit_DMA(I2C_1, hi2c1.Init.OwnAddress1, (uint8_t*)data, data_length);
 		if (status != HAL_OK)
 		{
 			return TEST_FAILED;
@@ -98,7 +98,7 @@ uint8_t CheckI2C(uint8_t data_length, uint8_t *data, uint8_t iteration_len)
 		--iteration_len;
 	}
 
-	// test passed successfuly
+	// test passed successfully
 	return TEST_SUCCEED;
 }
 

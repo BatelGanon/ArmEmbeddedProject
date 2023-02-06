@@ -12,14 +12,14 @@
 
 extern TIM_HandleTypeDef htim7;
 
-#define MINUTE 60
-#define THOSD 1000
-#define TIM7 &htim7
-#define TRUE 1
-#define FALSE 0
+#define MINUTE    60
+#define THOSD     1000
+#define TIM_7      &htim7
+#define TRUE      1
+#define FALSE     0
 #define INIT_ZERO 0
-#define MAX_VAL 65
-#define MIN_VAL 55
+#define MAX_VAL   65
+#define MIN_VAL   55
 
 
 // Function get iteration number,

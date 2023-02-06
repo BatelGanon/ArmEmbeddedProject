@@ -1,0 +1,2 @@
+../RTG/Src/SPI.c:15:6:HAL_SPI_TxRxCpltCallback	16	static
+../RTG/Src/SPI.c:32:9:CheckSPI	544	static

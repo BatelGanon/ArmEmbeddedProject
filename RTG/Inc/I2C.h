@@ -42,7 +42,7 @@ extern I2C_HandleTypeDef hi2c2;
 // Function get data, length and iteration number
 // transmit the data from master to slave buffer by DMA
 //then transmit from slave buffer to master buffer and compare the data with the master buffer
-uint8_t CheckI2C(uint8_t data_length, uint8_t *data, uint8_t iteration_len);
+uint8_t CheckI2C(uint8_t data_length, char *data, uint8_t iteration_len);
 
 
 

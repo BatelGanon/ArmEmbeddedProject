@@ -2,9 +2,6 @@
 /*
  * RTG.h
  *
- *  Created on: Oct 2, 2022
- *      Author: RTG
- *
  */
 
 ///////////////////////////////////////////////// this is the new RTG.H:///////////////////////////
@@ -25,17 +22,16 @@
 #include <stdbool.h>
 
 extern UART_HandleTypeDef huart3;
-#define UART_DEBUG &huart3
+#define UART_DEBUG        &huart3
+#define SERVER_PORT       7
 
-#define SERVER_PORT 7
+extern struct netif       gnetif;	//Generic data structure used for all lwIP network interfaces.
 
-extern struct netif gnetif;	//Generic data structure used for all lwIP network interfaces.
-
-#define END_OF_STRING 0
-#define BACKSPACE 8
-#define LINE_FEED 10
-#define CARRIAGE_RETURN 13
-#define TRUE 1
+#define END_OF_STRING     0
+#define BACKSPACE         8
+#define LINE_FEED         10
+#define CARRIAGE_RETURN   13
+#define TRUE              1
 
 
 void rtg_main();

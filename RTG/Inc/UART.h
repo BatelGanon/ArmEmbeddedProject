@@ -37,5 +37,5 @@ extern UART_HandleTypeDef huart6;
 
 // Function get data, size and interation number and transmit the data with uart4 to uart6 buffer,
 // then transmit the data from uart6 buffer to uart4 buffer and then compare with the data
-uint8_t CheckUART(uint8_t data_length, uint8_t *data, uint8_t iteration_len);
+uint8_t CheckUART(uint8_t data_length, char *data, uint8_t iteration_len);
 

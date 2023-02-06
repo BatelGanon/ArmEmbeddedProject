@@ -11,7 +11,7 @@ uint32_t End_Time = INIT_ZERO;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if(htim == TIM7)
+	if(htim == TIM_7)
 	{
 		Sec_Count++;
     }
@@ -32,7 +32,7 @@ uint8_t CheckTIMER(uint8_t usr_iter)
 		//Get the time of sys
 		Start_Time = HAL_GetTick();;
 
-		if( HAL_TIM_Base_Start_IT(TIM7) != HAL_OK)
+		if( HAL_TIM_Base_Start_IT(TIM_7) != HAL_OK)
 		{
 			return TEST_FAILED;
 		}
@@ -41,7 +41,7 @@ uint8_t CheckTIMER(uint8_t usr_iter)
 		while(Sec_Count != MINUTE){}
 
 		//Stop clk stop Timer
-		HAL_TIM_Base_Stop_IT(TIM7);
+		HAL_TIM_Base_Stop_IT(TIM_7);
 
 		//Give the end of time
 		End_Time = HAL_GetTick();

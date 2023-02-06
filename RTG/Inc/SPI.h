@@ -44,6 +44,6 @@ extern SPI_HandleTypeDef hspi5;
 // and transmit the data from SP1 - the master to SPI5 (the slave) buffer,
 // then transmit the data from SPI5 buffer to SPI1 buffer
 //and compare the buffer of SPI1 with the data we got in the function and return true is they equal
-uint8_t CheckSPI(uint8_t data_length, uint8_t *data, uint8_t iteration_len);
+uint8_t CheckSPI(uint8_t data_length, char *data, uint8_t iteration_len);
 
 #endif /* INC_SPI_H_ */
